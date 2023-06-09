@@ -3,9 +3,10 @@ use derive_builder::Builder;
 use getset::{CopyGetters, Getters, Setters};
 use serde::{Deserialize, Serialize};
 use std::path::PathBuf;
+use arbitrary::Arbitrary;
 
 #[derive(
-    Builder, Clone, Debug, Default, Deserialize, Eq, Getters, Setters, PartialEq, Serialize,
+    Builder, Clone, Debug, Default, Deserialize, Eq, Getters, Setters, PartialEq, Serialize, Arbitrary,
 )]
 #[serde(rename_all = "camelCase")]
 #[builder(
@@ -78,6 +79,7 @@ pub struct Hooks {
     Setters,
     PartialEq,
     Serialize,
+    Arbitrary,
 )]
 #[builder(
     default,
